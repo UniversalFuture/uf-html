@@ -1,0 +1,22 @@
+lexer grammar UFHtmlLex;
+
+CLASS_NAME: DOT [a-zA-Z] [a-zA-Z0-9-]*;
+COMMA: ',';
+DOT: '.';
+EQUALS: '=';
+EXCLAMATION_POINT: '!';
+ID: POUND [a-zA-Z] [a-zA-Z0-9]*;
+LBRACKET: '[';
+LCURLY: '{';
+LPAREN: '(';
+NUMBER: '-'? ([0-9]+|[0-9]+ DOT [0-9]+);
+POUND: '#';
+QUOTE: '"';
+RANGLE: '>';
+RBRACKET: ']';
+RCURLY: '}';
+RPAREN: ')';
+SEMI: ';';
+STRING_LITERAL : '"' (~('"' | '\\' | '\r' | '\n') | '\\' ('"' | '\\'))* '"';
+TAG_NAME: [a-zA-Z] [a-zA-Z0-9]*;
+WS : ([ \t\n]|[\u000D\u000A\u0085\u2028\u2029])+ -> skip;
